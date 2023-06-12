@@ -1,16 +1,16 @@
 <template>
 
-    <div class="container-fluid ">
+    <!-- <div class="container-fluid "> -->
       <section class="template_Nav lightRed" >
         <templateNav />
       </section>
 
-      <section class="template_Feed lightBlue ">
-        <templateFeed />
-        <templateNavTendance />
+      <section class="template_Feed lightBlue " @scroll="handleScroll">
+        <templateFeed ref="feedTemplate"/>
+        <templateNavTendance ref="tendanceTemplate" />
 
       </section>
-    </div>
+    <!-- </div> -->
 
 </template>
 
@@ -27,7 +27,43 @@ export default {
     templateNav,
     templateNavTendance,
     templateFeed
+  },
+  data(){
+    return{
+      feedTemplate: null,
+      tendanceTemplate:null
+    }
+  },
+  methods:{    
+    handleScroll(event){
+
+      // this.tendanceTemplate.scrollTop = event.target.scrollTop;
+      this.tendanceTemplate.scrollTop = this.feedTemplate.scrollTop;
+
+      console.log(this.tendanceTemplate )
+      console.log(this.tendanceTemplate.scrollTop )
+
+      console.log(this.feedTemplate )
+      console.log(this.feedTemplate.scrollTop )
+
+      console.log(event.target.scrollTop )
+
+
+
+    }
   }
+  ,mounted(){
+    // recupe des containers enfants a partir du parent
+    this.feedTemplate = this.$refs.feedTemplate.$refs.containerFeed;
+    console.log(this.feedTemplate)
+
+    this.tendanceTemplate = this.$refs.tendanceTemplate.$refs.containerTendance;
+    console.log(this.tendanceTemplate)
+
+  }
+
+
+
 }
 </script>
 <style scoped>
@@ -44,7 +80,7 @@ section{
 .template_Nav{
   width: 30%;
   justify-content: end;
-  border-left: 1px solid rgb(202, 202, 202);
+  border-right: 1px solid #eff3f4;
   padding:  0 3rem;
 }
 .template_Feed{
@@ -52,11 +88,6 @@ section{
 }
 
 
-.lightRed{
-  background-color: rgba(255, 0, 0, 0.144);
 
-}
-.lightBlue{
-  background-color: rgba(0, 0, 255, 0.151);
-}
+
 </style>

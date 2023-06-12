@@ -81,7 +81,6 @@ export default {
 .container_nav  {
   height: 100%;
   width: 43%;
-  background-color: rgba(255, 0, 0, 0.11);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

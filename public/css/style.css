@@ -26,7 +26,10 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
+main{
+  width: 100vw;
+  display: flex;
+}
 ol, ul, dl {
   list-style: none;
   margin: 0;
@@ -49,7 +52,14 @@ iframe {
   border: none;
 }
 .lightBlue{
-  background-color: rgba(0, 0, 255, 0.096);
-}
+  /* background-color: rgba(0, 0, 255, 0.096); */
+  background-color: rgba(255, 255, 255, 0.144);
 
+}
+.lightRed{
+  /* background-color: rgba(255, 0, 0, 0.144); */
+  background-color: rgba(255, 255, 255, 0.144);
+
+
+}
 /*# sourceMappingURL=style.css.map */

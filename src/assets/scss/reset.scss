@@ -24,7 +24,10 @@ body{
 }
 
 
-
+main{
+    width: 100vw;
+    display: flex;
+  }
 ol,ul,dl {
     list-style: none;
     margin: 0;
@@ -48,5 +51,9 @@ iframe{
 }
 .lightBlue{
     background-color: rgba(0, 0, 255, 0.096);
-  }
+}
   
+.lightRed{
+background-color: rgba(255, 0, 0, 0.144);
+
+}

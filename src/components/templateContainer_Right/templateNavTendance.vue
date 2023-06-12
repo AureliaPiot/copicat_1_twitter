@@ -1,8 +1,9 @@
 <template>
   
-  <div class="lightBlue tNavTendance ">
+  <div class="lightBlue tNavTendance " ref="containerTendance">
 
     <div class="container_Tendance">
+<!-- ----------- -->
 
       <form class="tendance_search">
         <div class="tendance_search--group-input">
@@ -10,6 +11,7 @@
           <label for="tendance_search--input"><i class="bi bi-search"></i></label>
         </div>
       </form>
+<!-- ----------- -->
 
       <ul class="container_liste">
         <li class="TD_list--title">
@@ -23,9 +25,43 @@
           
         </li>
       </ul>
+<!-- ----------- -->
 
-    </div>
+      <ul class="container_liste">
 
+        <li class="suggestion_list--title">
+          <h5>suggestion</h5>
+        </li>
+
+        <li class="suggestion_list--item" v-for="n in 4" :key="n">
+
+          <span class="suggestion_span--img_profile"></span>
+
+          <div class="suggestion_span--group">
+            <span class="suggestion_span--name_profile">blahblah</span>
+            <span class="suggestion_span--tag_profile">blubhbluh</span>
+          </div>
+          <span class="suggestion_span--follow_profile--action">suivre</span>
+
+
+          
+        </li>
+
+      </ul>
+<!-- ----------- -->
+      <nav>
+        <ul>
+          <li>Conditions d’utilisation</li>
+          <li>Politique de Confidentialité</li>
+          <li>Politique relative aux cookies</li>
+          <li>Accessibilité</li>
+          <li>Informations sur les publicités</li>
+          <li>Plus</li>
+          <li>© 2023 X Corp.</li>
+        </ul>
+      </nav>
+<!-- ----------- -->
+    </div> <!-- container_Tendance -->
   </div>
  </template>
    
@@ -64,7 +100,7 @@
      methods: {//ici les methodes
      },
 ///////////////////
-     computed:{//(retrun)ici , return de propieter qui necessite une logique de modification, sans modifier les propriete utiliser de base
+    computed:{//(retrun)ici , return de propieter qui necessite une logique de modification, sans modifier les propriete utiliser de base
       //elles sont automatiquement recalculer si une propriete de base est modifier
       //proprieter mis en cache (gain de ressource, temps etc ..)
       elements(){
@@ -126,16 +162,23 @@
 .tNavTendance{
 
 
-  width: 55%;
-  height: fit-content;
+  /* width: 55%; */
+  flex: 1;
+
+  /* height: fit-content; */
+  border-left: 1px solid #eff3f4;
 
   padding:  0 3rem;
 
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
 }
 .container_Tendance{
-
   width: 60%;
   position: relative;
+  
 }
 .tendance_search{
   position: fixed;
@@ -191,6 +234,26 @@ ul{
 .TD_span--name{
   /* font-size: larger; */
   font-weight: 700;
+}
+.suggestion_list--item{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.suggestion_span--img_profile{
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: black;
+  border-radius: 25px;
+}
+
+.suggestion_span--group{
+  display: flex;
+  flex-direction: column;
+}
+.suggestion_span--follow_profile--action{
+  margin-left: auto;
 }
    </style>
    

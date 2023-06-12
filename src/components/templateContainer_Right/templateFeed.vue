@@ -1,7 +1,7 @@
 <template>
-  <div class="tfeed">
+  <div ref="containerFeed" class="tfeed">
 
-    <FeedNewPost />
+    <FeedNewPost/>
     <FeedThread />
   
   </div>
@@ -19,19 +19,28 @@
     FeedThread,
     FeedNewPost
   },
-  // props:[
-
-  // ],
    props: {
    //   msg: String
-   }
+   },
+   methods: {//ici les methodes
+    },
+  //  mounted(){
+  //       console.log(this)
+  //   }
  }
  </script>
 
 <style scoped>
 .tfeed{
-  width: 45%;
-  height: fit-content;
+  /* width: 45%; */
+  /* height: fit-content; */
+  flex: 1;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+
 }
+
 
  </style>

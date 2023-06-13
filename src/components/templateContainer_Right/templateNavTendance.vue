@@ -24,7 +24,7 @@
 import templateNavSuggestion from '@/components/templateContainer_Right/partRight/suggestion.vue';
 import templateNavTendanceContainerList from '@/components/templateContainer_Right/partRight/containerTendance.vue';
 import ContainerLinkMetaData from '@/components/templateContainer_Right/partRight/ContainerLinkMetaData.vue'
-import searchBar from '@/components/templateContainer_Right/partRight/searchBar.vue'
+import searchBar from '@/components/templateContainer_Right/partRight/SearchBar.vue'
 
    export default {
      name: 'templateNavTendance',
@@ -47,7 +47,7 @@ import searchBar from '@/components/templateContainer_Right/partRight/searchBar.
      methods: {//ici les methodes
      },
 ///////////////////
-    computed:{//(retrun)ici , return de propieter qui necessite une logique de modification, sans modifier les propriete utiliser de base
+    computed:{//(retrun)ici , return de proprieter qui necessite une logique de modification, sans modifier les propriete utiliser de base
       //elles sont automatiquement recalculer si une propriete de base est modifier
       //proprieter mis en cache (gain de ressource, temps etc ..)
      

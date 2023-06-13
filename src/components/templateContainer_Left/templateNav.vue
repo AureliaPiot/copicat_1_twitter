@@ -91,7 +91,7 @@ export default {
   display: flex;
   gap: 0.7rem;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .btn_action--newTweet{

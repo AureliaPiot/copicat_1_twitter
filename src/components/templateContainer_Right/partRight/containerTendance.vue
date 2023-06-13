@@ -18,8 +18,12 @@
  
  <script>
 
+// import { mapStores } from 'pinia'
+import { useDataStore } from '@/stores/data.js'
 
  export default {
+
+
    name: 'templateNavTendanceContainerList',
    props: {//ici les proprietes transmise par le parents
    //   msg: String
@@ -53,6 +57,7 @@
   computed:{//(retrun)ici , return de propieter qui necessite une logique de modification, sans modifier les propriete utiliser de base
     //elles sont automatiquement recalculer si une propriete de base est modifier
     //proprieter mis en cache (gain de ressource, temps etc ..)
+
     elements(){
         return [
           {
@@ -104,6 +109,11 @@
       }//elements
     
    },
+   mounted(){
+    const store = useDataStore();
+    const nameUser = store.nameUser;
+    console.log(nameUser)
+   }
  }
  </script>
  

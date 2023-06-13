@@ -9,8 +9,8 @@
  
  <script>
  // @ is an alias to /src
-  import FeedThread from '@/components/templateContainer_Right/feed/TFeedThread.vue';
-  import FeedNewPost from '@/components/templateContainer_Right/feed/TFeedNewPost.vue';
+  import FeedThread from '@/components/templateContainer_Right/partCenter/TFeedThread.vue';
+  import FeedNewPost from '@/components/templateContainer_Right/partCenter/TFeedNewPost.vue';
 
 
  export default {

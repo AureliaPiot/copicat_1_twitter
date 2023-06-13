@@ -92,6 +92,9 @@
    .post_header--data{
     display: flex;
    }
+   .post_stat{
+    margin-top: 10px;
+   }
    .post_stat ul {
     max-width: 425px;
     display: flex;

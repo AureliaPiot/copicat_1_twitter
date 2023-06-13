@@ -6,7 +6,7 @@
    
    <script>
 // @ is an alias to /src
-import templatePost from  '@/components/templateContainer_Right/feed/template_post.vue';
+import templatePost from  '@/components/templateContainer_Right/partCenter/template_post.vue';
 
 
    export default {

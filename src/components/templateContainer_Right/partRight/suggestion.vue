@@ -7,21 +7,26 @@
           </li>
   
           <li class="suggestion_list--item" v-for="n in 4" :key="n">
-  
-            <span class="suggestion_span--img_profile"></span>
-  
-            <div class="suggestion_span--group">
-              <span class="suggestion_span--name_profile">blahblah</span>
-              <span class="suggestion_span--tag_profile">@blubhbluh</span>
-            </div>
-            <span class="suggestion_span--follow_profile--action">Suivre</span>
+            <a href="">
+
+              <span class="suggestion_span--img_profile"></span>
+              
+              <div class="suggestion_span--group">
+                <span class="suggestion_span--name_profile">blahblah</span>
+                <span class="suggestion_span--tag_profile">@blubhbluh</span>
+              </div>
+              <span class="suggestion_span--follow_profile--action">Suivre</span>
+            
+            </a>
   
   
             
           </li>
   
-          <li class="suggestion_list--more ">
-            <p>en savoir plus</p>
+          <li class="suggestion_list--more">
+            <a href="#">
+              <p>en savoir plus</p>
+            </a>
           </li>
   
         </ul>
@@ -64,20 +69,31 @@
   background-color: #eff3f4;
   border-radius: 15px;
   text-align: initial;
-  padding: 1rem ! important;
+  overflow: hidden;
+
 }
 h5{
   font-size: large;
   font-weight: bold;
 }
-  .suggestion_list--item , .suggestion_list--more{
-    padding: 12px 0;
+.suggestion_list--title{
+  padding: 0.45rem 1rem;
+
+}
+  .suggestion_list--more > a{
+    display: block;
+    padding: 12px ;
   }
-  .suggestion_list--item{
+  .suggestion_list--item >a{
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 12px 1rem;
+
   }
+  a:hover{
+  background: rgba(0, 0, 0, 0.055);
+}
   .suggestion_span--img_profile{
     display: block;
     width: 2rem;

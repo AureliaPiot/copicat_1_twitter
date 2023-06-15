@@ -3,43 +3,61 @@
     <li>
       <ul class="container_list ">
         <li id="home" class="d-flex justify-content-start">
-          <a href="/"><i class="bi bi-twitter"></i></a>
+          <a href="http://localhost:8080/#/"><i class="bi bi-twitter"></i></a>
         </li>
         <li id="nav_accueil">
-          <i class="bi bi-house"></i>
-          <p>accueil</p>
+          <a href="http://localhost:8080/#/">
+            <i class="bi bi-house"></i>
+            <p>accueil</p>
+          </a>
         </li>
         <li id="nav_explorer">
-          <i class="bi bi-hash"></i>
-          <p>explorer</p>
+          <a href="http://localhost:8080/#/explorer">
+            <i class="bi bi-hash"></i>
+            <p>explorer</p>
+          </a>
         </li>
         <li id="nav_notification ">
-          <i class="bi bi-bell"></i>
-          <p>notification</p>
+          <a href="http://localhost:8080/#/notification">
+            <i class="bi bi-bell"></i>
+            <p>notification</p>
+          </a>
         </li>
         <li id="nav_messages">
-          <i class="bi bi-envelope"></i>
-          <p>messages </p>
+          <a href="http://localhost:8080/#/message">
+            <i class="bi bi-envelope"></i>
+            <p>messages </p>
+          </a>
         </li>
         <li id="nav_listes">
-          <i class="bi bi-card-list"></i>
-          <p>listes</p>
+          <a href="http://localhost:8080/#/list">
+            <i class="bi bi-card-list"></i>
+            <p>listes</p>
+          </a>
         </li>
         <li id="nav_signets">
-          <i class="bi bi-bookmark"></i>
-          <p>signets</p>
+          <a href="http://localhost:8080/#/signet">
+            <i class="bi bi-bookmark"></i>
+            <p>signets</p>
+          </a>
         </li>
         <li id="nav_twitterBlues">
-          <i class="bi bi-twitter"></i>
-          <p>twitter blues</p>
+          <a href="#">
+            <i class="bi bi-twitter"></i>
+            <p>twitter blues</p>
+          </a>
         </li>
         <li id="nav_profile">
-          <i class="bi bi-person"></i>
-          <p>profile</p>
+          <a href="http://localhost:8080/#/profile">
+            <i class="bi bi-person"></i>
+            <p>profile</p>
+          </a>
         </li>
         <li id="nav_plus">
-          <i class="bi bi-three-dots"></i>
-          <p>plus</p>
+          <a href="#">
+            <i class="bi bi-three-dots"></i>
+            <p>plus</p>
+          </a>
         </li>
         <li id="nav_tweeterAction" class="btn_action--newTweet d-flex justify-content-center text-white rounded-pill bg-primary py-3 fw-bold">
           <p>tweeter</p>
@@ -47,6 +65,7 @@
       </ul>
     </li>
 
+    
     <li>
       <ul class="p-0">
         <li id="nav_null" class="d-flex justify-content-center ">
@@ -105,12 +124,19 @@ export default {
   background-color: #1d9bf0;
 }
 
-li {
+li , a{
   display: flex;
   gap: 1.5rem;
   align-items: center;
   font-weight: 400;
   text-transform: uppercase;
+}
+li a {
+  padding: 0.5rem 0.8rem;
+}
+a:hover{
+  border-radius: 25px;
+  background: rgba(15, 15, 32, 0.068);
 }
 
 li i {

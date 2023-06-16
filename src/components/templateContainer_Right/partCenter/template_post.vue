@@ -1,25 +1,31 @@
 <template>
     <article class="post_template">
-        <div>
-            <div class="post_profile--img"></div>
+        <div class="post_part-left">
+            <div class="post_profile--img" 
+            :style="{ backgroundImage: `url( ${require('@/assets/img/profile/' +this.userPostInfo[0].userData.user_img)} )` }"></div>
         </div>
 
-        <div>
+        <div class="post_part-right">
             <div class="post_header">
                 <div class="post_header--data">
-                    <p>{{this.dataInfo.userData.user_pseudo}}</p>
-                    <p>@{{this.dataInfo.userData.user_tag}}</p>
+
+                    <p>{{this.userPostInfo[0].userData.user_pseudo}}</p>
+                    <p>@{{this.userPostInfo[0].userData.user_tag}}</p>
+
                     <p>{{this.dataInfo.post_date}}</p>
                 </div>
                 <div class="post_header--action">
                     <p>...</p>
                 </div>
             </div><!-- post_header -->
-            
+<!-- ---- -->
             <div class="post_content">
                 <p>{{this.dataInfo.post_content}}</p>
+        
+                <img :src="require(`@/assets/img/post/${this.dataInfo.post_image}`)" alt="illustration" v-if="this.dataInfo.post_image !== null">
+
             </div>
-            
+<!-- -----    -->
             <div class="post_stat">
                 <ul>
                     <li class="post_stat--comment">
@@ -62,8 +68,17 @@
    export default {
      name: 'templatePost',
      props: {
-      dataInfo: Object
+      dataInfo: Object,
+      userPostInfo : Object,
      },
+     computed:{
+
+      },
+     mounted(){
+        console.log(this.dataInfo)
+
+        console.log(this.dataInfo.post_image)
+     }
 
    }
    </script>
@@ -79,10 +94,14 @@
     border-bottom: 1px solid #eff3f4;
 
    }
+   .post_part-right{
+    flex: 1;
+   }
    .post_profile--img{
     width: 3rem;
     height: 3rem;
-    background: blue;
+
+    /* background: blue; */
     border-radius: 25px;
   }
    .post_header{

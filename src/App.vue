@@ -6,6 +6,26 @@
   <router-view/>
 </template>
 
+<script>
+import { useAppDataStore } from '@/stores/appData.js'
+export default {
+  computed:{
+      storeAppData(){
+        return useAppDataStore()
+      },
+  },
+  created() {
+    
+    this.storeAppData.fetchUser();
+    this.storeAppData.fetchPost();
+
+  },
+
+  // Autres options et hooks de cycle de vie du composant
+}
+</script>
+
+
 <style>
 #app {
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */

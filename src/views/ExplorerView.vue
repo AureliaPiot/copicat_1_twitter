@@ -48,7 +48,7 @@ section{
   width: 30%;
   justify-content: end;
   border-right: 1px solid #eff3f4;
-  padding:  0 3rem;
+  padding:  0 0.5rem;
 }
 .template_Feed{
   width: 70%;

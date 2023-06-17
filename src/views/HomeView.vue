@@ -18,7 +18,7 @@
 // @ is an alias to /src
 import templateNav from '@/components/templateContainer_Left/templateNav.vue'
 import templateNavTendance from '@/components/templateContainer_Right/templateNavTendance.vue'
-import templateFeed from '@/components/templateContainer_Right/templateFeed.vue'
+import templateFeed from '@/components/templateContainer_Right/templateFeed_Center.vue'
 
 
 export default {
@@ -81,7 +81,7 @@ section{
   width: 30%;
   justify-content: end;
   border-right: 1px solid #eff3f4;
-  padding:  0 3rem;
+  padding:  0 0.5rem;
 }
 .template_Feed{
   width: 70%;

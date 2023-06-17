@@ -2,7 +2,7 @@
   <ul class="container_nav  ligth-red">
     <li>
       <ul class="container_list ">
-        <li id="home" class="d-flex justify-content-start">
+        <li id="home" >
           <a href="http://localhost:8080/#/"><i class="bi bi-twitter"></i></a>
         </li>
         <li id="nav_accueil">
@@ -43,8 +43,8 @@
         </li>
         <li id="nav_twitterBlues">
           <a href="#">
-            <i class="bi bi-twitter"></i>
-            <p>twitter blues</p>
+            <i class="bi bi-patch-check"></i>
+            <p>certifé</p>
           </a>
         </li>
         <li id="nav_profile">
@@ -67,11 +67,12 @@
 
     
     <li>
-      <ul class="p-0">
+      <!-- <ul class="">
         <li id="nav_null" class="d-flex justify-content-center ">
           <p>profile</p>
         </li>
-      </ul>
+      </ul> -->
+      <TemplateContainerProfile/>
     </li>
 
    
@@ -79,8 +80,12 @@
 </template>
   
 <script>
+import  TemplateContainerProfile from '@/components/templateContainer_Left/TemplateContainerProfile.vue'
 export default {
   name: 'templateNav',
+  components: {
+    TemplateContainerProfile,
+  },
   props: {
     //   msg: String
   },
@@ -97,9 +102,22 @@ export default {
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#home{
+  color: #1d9bf0;
+}
+#nav_plus a i{
+  border: 2px solid black;
+  border-radius: 22px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+}
 .container_nav  {
   height: 100%;
-  width: 43%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,9 +126,10 @@ export default {
 .container_list{
   width: 100%;
   display: flex;
-  gap: 0.7rem;
+  gap: 0.3rem;
   flex-direction: column;
   justify-content: flex-start;
+ 
 }
 
 .btn_action--newTweet{
@@ -120,7 +139,7 @@ export default {
   font-weight: bold;
   text-transform:capitalize;
   color: white;
-  border-radius: 25px;
+  border-radius: 45px;
   background-color: #1d9bf0;
 }
 
@@ -129,13 +148,13 @@ li , a{
   gap: 1.5rem;
   align-items: center;
   font-weight: 400;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 li a {
   padding: 0.5rem 0.8rem;
 }
 a:hover{
-  border-radius: 25px;
+  border-radius: 45px;
   background: rgba(15, 15, 32, 0.068);
 }
 

@@ -3,8 +3,8 @@
   
     <form class="tendance_search">
         <div class="tendance_search--group-input">
-          <input id="tendance_search--input" type="text" placeholder=" Recherche Twitter">
           <label for="tendance_search--input"><i class="bi bi-search"></i></label>
+          <input id="tendance_search--input" type="text" placeholder=" Recherche Twitter">
         </div>
       </form>
 
@@ -37,16 +37,22 @@ export default {
   /* margin: 0.2rem; */
   padding: 0.3rem;
   background-color: #ffffff;
-
+}
+.tendance_search--group-input  input:focus-visible{
+  outline: none;
+}
+.tendance_search--group-input:focus-within {
+  outline: 1px solid blue;
 }
 .tendance_search--group-input{
   width: 100%;
   border-radius: 25px;
   background-color: #eff3f4;
+  padding: 0 1rem;
 }
 
 .tendance_search input{
-  padding: 0.6rem 0;
+  padding: 0.6rem 0 0.6rem 1rem;
 
   font-size: 1.1rem;
   background: transparent;

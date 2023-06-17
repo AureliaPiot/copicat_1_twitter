@@ -20,10 +20,12 @@
             </div><!-- post_header -->
 <!-- ---- -->
             <div class="post_content">
-                <p>{{this.dataInfo.post_content}}</p>
-        
-                <img :src="require(`@/assets/img/post/${this.dataInfo.post_image}`)" alt="illustration" v-if="this.dataInfo.post_image !== null">
+                <p>{{this.dataInfo.post_content}}</p>    
+            </div>
+<!-- ---- -->
 
+            <div class="post_media--container"  v-if="this.dataInfo.post_image !== null">
+                <img :src="require(`@/assets/img/post/${this.dataInfo.post_image}`)" alt="illustration">
             </div>
 <!-- -----    -->
             <div class="post_stat">
@@ -39,9 +41,9 @@
                     </li>
                     <li class="post_stat--like">
                         <i class="bi bi-heart" v-if="this.dataInfo.post_stat.like %2 == 0"></i>
-                        <i class="bi bi-heart-fill"  v-if="this.dataInfo.post_stat.like %2 !== 0"></i>
+                        <i class="bi bi-heart-fill" v-else></i>
                         <p>{{ this.dataInfo.post_stat.like }}</p>
-
+                        
                     </li>
                     <li class="post_stat--action">
                         <i class="bi bi-reception-3"></i>
@@ -95,14 +97,16 @@
 
    }
    .post_part-right{
-    flex: 1;
+       flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
    }
    .post_profile--img{
     width: 3rem;
     height: 3rem;
-
-    /* background: blue; */
     border-radius: 25px;
+    background-size: contain;
   }
    .post_header{
     display: flex;
@@ -111,6 +115,20 @@
    .post_header--data{
     display: flex;
    }
+
+   .post_media--container{
+    max-height: 510px;
+    width: fit-content;
+    border-radius: 25px;
+    overflow: hidden;
+   }
+   .post_media--container >img{
+    max-height: inherit;
+    height: 100%;
+    width: auto;
+   }
+
+
    .post_stat{
     margin-top: 10px;
    }

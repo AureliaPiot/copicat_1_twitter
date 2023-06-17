@@ -1,5 +1,6 @@
 <template>
   <div ref="containerFeed" class="tfeed">
+    <templateHeader/>
 
     <FeedNewPost/>
     <FeedThread />
@@ -9,6 +10,8 @@
  
  <script>
  // @ is an alias to /src
+import templateHeader from  '@/components/templateContainer_Right/partCenter/template_header.vue';
+
   import FeedThread from '@/components/templateContainer_Right/partCenter/TFeedThread.vue';
   import FeedNewPost from '@/components/templateContainer_Right/partCenter/TFeedNewPost.vue';
 
@@ -16,6 +19,7 @@
  export default {
    name: 'templateFeed',
    components: {
+    templateHeader,
     FeedThread,
     FeedNewPost
   },

@@ -1,13 +1,13 @@
 <template>
 
-    <!-- <div class="container-fluid "> -->
-      <section class="template_Nav lightRed" >
+
+      <section class="template_Nav " >
         <templateNav />
       </section>
 
-      <section class="template_Feed lightBlue ">
+      <section class="template_Feed ">
       </section>
-    <!-- </div> -->
+
 
 </template>
 
@@ -38,20 +38,24 @@ export default {
 }
 </script>
 <style scoped>
+
 section{
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
 }
+
 .template_Nav{
-  width: 30%;
+  flex: 1;
   justify-content: end;
   border-right: 1px solid #eff3f4;
   padding:  0 0.5rem;
 }
+
 .template_Feed{
-  width: 70%;
+  flex: 2.25;
+
 }
 
 </style>

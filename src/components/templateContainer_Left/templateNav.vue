@@ -30,13 +30,13 @@
           </a>
         </li>
         <li id="nav_listes">
-          <a href="http://localhost:8080/#/list">
+          <a href="http://localhost:8080/#/">
             <i class="bi bi-card-list"></i>
             <p>listes</p>
           </a>
         </li>
         <li id="nav_signets">
-          <a href="http://localhost:8080/#/signet">
+          <a href="http://localhost:8080/#/">
             <i class="bi bi-bookmark"></i>
             <p>signets</p>
           </a>

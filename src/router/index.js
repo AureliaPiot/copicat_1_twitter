@@ -32,9 +32,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "explorer" */ '../views/ExplorerView.vue')
   },
   {
+    path: '/explorer/:element',
+    name: 'explorerwithElement',
+  //  component:function(){
+    // import(/* webpackChunkName: "explorer" */ '../views/ExplorerView.vue')
+  //  }
+    component: () => import(/* webpackChunkName: "explorer" */ '../views/ExplorerView.vue')
+  },
+  {
     path: '/trend',
     name: 'trend',
     component: () => import(/* webpackChunkName: "explorer" */ '../views/TrendView.vue')
+  },  
+  {
+    path: '/notification',
+    name: 'notification',
+    component: () => import(/* webpackChunkName: "explorer" */ '../views/NotifView.vue')
   },
 
 

@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
-src/assets/img
+src/assets/img/post/*
+src/assets/img/profile/*
+
 /dist
 
 

@@ -90,13 +90,16 @@ overflow-y: scroll;
 display: flex;
 }
 .template_Nav{
-width: 30%;
+  flex: 1;
+/* width: 30%; */
 justify-content: end;
 border-right: 1px solid #eff3f4;
 padding:  0 0.5rem;
 }
 .part_right{
-width: 70%;
+  flex: 2.25;
+
+/* width: 70%; */
 }
 
 .tfeed_message{

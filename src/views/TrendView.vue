@@ -76,7 +76,7 @@
   },
   data(){
   return{
-    title:"Explorer",
+    title:"Trend",
     limit_Tendance:20,
     limit_Suggest:3,
   
@@ -104,13 +104,16 @@
   display: flex;
   }
   .template_Nav{
-  width: 30%;
+  /* width: 30%; */
+  flex: 1;
+
   justify-content: end;
   border-right: 1px solid #eff3f4;
   padding:  0 0.5rem;
   }
   .part_right{
-  width: 70%;
+  /* width: 70%; */
+  flex: 2.25;
   }
   
   .tfeed{

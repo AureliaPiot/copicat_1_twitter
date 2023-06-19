@@ -1,20 +1,21 @@
 
 <template>
-  <div class="header_message">
+  <div class="header_trend">
 
-      <h1>{{ title }}</h1>
-    
-    
+    <div class="header_group">
+      <i class="bi bi-arrow-left"></i>
+      <h1>Tendances</h1>
+    </div>
+
     <div class="header_group">
       <i class="bi bi-gear"></i>
-      <i class="bi bi-envelope-plus"></i>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Header_messages',
+  name: 'Header_trend',
   created() {
 
   },
@@ -23,7 +24,7 @@ export default {
     }
   },
   props: {
-    title : String,
+    title: String
    
   },
   methods: {
@@ -32,18 +33,22 @@ export default {
 }
 </script>
 
-<style scoped>
-.header_message{
-  padding: 0.2rem 1rem;
+<style  scoped>
+.header_trend{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
 }
 .header_group{
-  width: 15%;
+
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 
 }
+h1{
+  padding-left: 2rem;
+}
+
 </style>
 

@@ -1,6 +1,5 @@
 <template>
-    <div class="lightBlue h-100 tfeedthread">
-        <!-- <templatePost :dataInfo="posts" v-for="n in 20" :key="n" /> -->
+    <div class="lightBlue feedthread">
         <templatePost :userPostInfo="arrayUser.filter(user => user.id === post.userId)"  :dataInfo="post" v-for="post in arrayPost" :key="post.post_id" />
 
     </div>

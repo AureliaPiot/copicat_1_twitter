@@ -42,7 +42,10 @@ export default {
   outline: none;
 }
 .tendance_search--group-input:focus-within {
-  outline: 1px solid blue;
+  outline: 1px solid #1d9bf0;
+}
+.tendance_search--group-input:focus-within label{
+  color: #1d9bf0;
 }
 .tendance_search--group-input{
   width: 100%;

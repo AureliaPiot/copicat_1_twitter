@@ -26,7 +26,9 @@ const routes = [
   {
     path: '/explorer',
     name: 'explorer',
-   
+  //  component:function(){
+    // import(/* webpackChunkName: "explorer" */ '../views/ExplorerView.vue')
+  //  }
     component: () => import(/* webpackChunkName: "explorer" */ '../views/ExplorerView.vue')
   },
 

@@ -6,6 +6,15 @@
       </section>
 
       <section class="template_Feed lightBlue ">
+
+<!-- part center -->
+        <div ref="containerFeed" class="tfeed">
+            <templateHeader :title="title"/>
+
+        </div>
+<!-- part right -->
+        <templateNavTendance ref="tendanceTemplate" />
+
       </section>
     <!-- </div> -->
 
@@ -13,17 +22,22 @@
 
 <script>
 // @ is an alias to /src
+import router from '@/router/';
+
 import templateNav from '@/components/templateContainer_Left/templateNav.vue'
+import templateNavTendance from '@/components/templateContainer_Right/templateNavTendance.vue'
 
 
 export default {
   name: 'ExplorerView',
+  router,
   components: {
-    templateNav
+    templateNav,
+    templateNavTendance,
   },
   data(){
     return{
-
+      title:"explorer"
     }
   },
   methods:{    
@@ -53,5 +67,13 @@ section{
 .template_Feed{
   width: 70%;
 }
+.tfeed{
+position:relative;
+flex: 1;
+height: 100vh;
+overflow-y: scroll;
+scrollbar-width: none;
 
+
+}
 </style>

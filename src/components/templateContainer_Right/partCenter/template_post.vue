@@ -77,9 +77,9 @@
 
       },
      mounted(){
-        console.log(this.dataInfo)
+        // console.log(this.dataInfo)
 
-        console.log(this.dataInfo.post_image)
+        // console.log(this.dataInfo.post_image)
      }
 
    }

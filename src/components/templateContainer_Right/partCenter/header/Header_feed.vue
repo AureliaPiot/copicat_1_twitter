@@ -4,10 +4,10 @@
   <h1>{{ title }}</h1>
 
   <div class="header_group">
-    <a href="#" class="header_group--forYou selected">
+    <a href="#" @click="setForYou" class="header_group--forYou selected"  ref="header_foryou">
       Pour vous
     </a>
-    <a href="#" class="header_group--followed">
+    <a href="#" @click="setFollwed" class="header_group--followed" ref="header_followed">
       Abonnement
     </a>
 
@@ -28,6 +28,22 @@ export default {
    title : String,
   },
   methods: {
+    setForYou:function(){
+      // console.log(this.$refs.header_foryou)
+      
+      if(! this.$refs.header_foryou.classList.contains('selected')){
+        this.$refs.header_foryou.classList.add('selected')
+        this.$refs.header_followed.classList.remove('selected')
+      }
+    },
+    setFollwed:function(){
+      // console.log(this.$refs.header_followed)
+      if(! this.$refs.header_followed.classList.contains('selected')){
+        this.$refs.header_followed.classList.add('selected')
+        this.$refs.header_foryou.classList.remove('selected')
+
+      }
+    }
    
   },
 }
@@ -36,6 +52,7 @@ export default {
 <style  scoped>
 h1{
   padding: 0.5rem 0;
+  padding-left: 0.6rem;
 }
 .header_group{
   display: flex;

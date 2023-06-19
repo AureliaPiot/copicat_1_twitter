@@ -35,7 +35,7 @@ export default {
 .header_center{
 position: sticky;
 top: 0;
-padding: 0 0.6rem;
+/* padding: 0 0.6rem; */
 background: #ffffffed;
 -webkit-backdrop-filter: blur(8px);
 backdrop-filter: blur(8px);

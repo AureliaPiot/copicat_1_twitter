@@ -1,20 +1,25 @@
 
 <template>
   <div class="header_center">
-    <h1>{{ title }}</h1>
-   
+
+    <header_Feed :title="title" />
+
   </div>
 </template>
 
 <script>
+import header_Feed from '@/components/templateContainer_Right/partCenter/header//Header_feed.vue'
 export default {
   name: 'templateHeader',
   created() {
 
   },
+  components:{
+    header_Feed
+  },
   data() {
     return {
-      title:"accueil",
+      title:"Accueil",
     }
   },
   props: {
@@ -28,9 +33,12 @@ export default {
 
 <style scoped>
 .header_center{
-width: 100%;
-position: fixed;
-background: aquamarine;
+position: sticky;
+top: 0;
+padding: 0 0.6rem;
+background: #ffffffed;
+-webkit-backdrop-filter: blur(8px);
+backdrop-filter: blur(8px);
 
 }
 </style>

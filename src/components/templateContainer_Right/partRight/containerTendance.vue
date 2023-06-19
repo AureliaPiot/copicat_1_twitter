@@ -4,13 +4,20 @@
         <li class="TD_list--title">
           <h5 class="fw-bold">Tendance pour vous</h5>
         </li>
-        <li class="TD_list--item" v-for="element in elements" :key="element">
+        <li class="TD_list--item" v-for="(element) in elements" :key="element" >
+        
+
           <a class="TD_list--link" :href="'http://localhost:8080/#/explorer/'+element.tendance_name">       
             <span class="TD_span--type">{{ element.tendance_type }}</span>
             <span class="TD_span--name">{{ element.tendance_name }}</span>
             <span class="TD_span--number">{{ element.tweet_number }}K Tweet</span>
           </a>
           
+        </li>
+        <li class="TD_list--more" v-if="limit <10">
+            <a href="#/trend">
+              <p>Voir plus</p>
+            </a>
         </li>
     </ul>
 
@@ -29,7 +36,7 @@ import { useTendanceDataStore } from '@/stores/tendanceData.js'
 
    name: 'templateNavTendanceContainerList',
    props: {//ici les proprietes transmise par le parents
-   //   msg: String
+     limit: Number ,
    },
    data(){
     return{//ici les proprietes du composant
@@ -50,7 +57,7 @@ import { useTendanceDataStore } from '@/stores/tendanceData.js'
     },
     elements(){
       let array_List_object=[];
-      for(let i=0; i<9 ; i++ ){
+      for(let i=0; i<this.limit ; i++ ){
         array_List_object.push(this.storeTendanceData.getTendanceFormatData(i)) 
         }
         return array_List_object;
@@ -69,7 +76,7 @@ import { useTendanceDataStore } from '@/stores/tendanceData.js'
 
 
 .container_liste{
-  margin-top: 3.5rem;
+  margin-top: 0.5rem;
   width: 100%;
   background-color: #eff3f4;
   border-radius: 15px;
@@ -96,6 +103,13 @@ h5{
 a:hover{
   background: rgba(0, 0, 0, 0.055);
 }
+
+.TD_list--more > a{
+    color: #1d9bf0;
+    display: block;
+    padding: 12px ;
+ }
+
 .TD_span--type , .TD_span--number{
   font-size: small;
   font-weight: 300;

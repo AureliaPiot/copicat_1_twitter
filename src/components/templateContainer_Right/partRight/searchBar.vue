@@ -31,10 +31,9 @@ export default {
 
 <style  scoped>
 .tendance_search{
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 20%;
-  /* margin: 0.2rem; */
+  width: 100%;
   padding: 0.3rem;
   background-color: #ffffff;
 }

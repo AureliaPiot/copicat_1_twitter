@@ -41,7 +41,7 @@ export default {
   align-items: center;
 }
 .header_explorer--form{
-  width: 70%;
+  width: 90%;
   height: 3rem;
   padding: 0 1rem;
   display: flex;
@@ -61,6 +61,7 @@ export default {
   margin-right: 1rem;
 }
 .header_explorer--form input{
+  width: 100%;
   outline: none;
   border: none;
   background: transparent;

@@ -4,6 +4,8 @@
 
     <header_Feed :title="title" v-if="title === 'Accueil'"/>
     <header_explorer :title="title" v-if="title === 'Explorer'"/>
+    <header_messages :title="title" v-if="title === 'Messages'"/>
+
 
   </div>
 </template>
@@ -11,6 +13,7 @@
 <script>
 import header_Feed from '@/components/templateContainer_Right/partCenter/header/Header_feed.vue'
 import header_explorer from '@/components/templateContainer_Right/partCenter/header/Header_explorer.vue'
+import header_messages from '@/components/templateContainer_Right/partCenter/header/Header_messages.vue'
 
 export default {
   name: 'templateHeader',
@@ -19,7 +22,9 @@ export default {
   },
   components:{
     header_Feed,
-    header_explorer
+    header_explorer,
+    header_messages,
+
 
   },
   data() {

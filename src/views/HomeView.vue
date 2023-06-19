@@ -1,13 +1,14 @@
 <template>
 
-    <!-- <div class="container-fluid "> -->
+
       <section class="template_Nav " >
         <templateNav />
       </section>
 
       <section class="part_right " @scroll="handleScroll">
         
-<!-- part center -->
+<!-- part center --------------------------------------------->
+
         <div ref="containerFeed" class="tfeed">
           <templateHeader :title="title"/>
 
@@ -15,27 +16,49 @@
           <FeedThread />
 
         </div>
-<!-- part right -->
+
+<!-- part right --------------------------------------------->
 
 
-        <templateNavTendance ref="tendanceTemplate" />
+        <div class="lightBlue tNavTendance " ref="containerTendance">
+
+          <div class="container_Tendance">
+
+            <searchBar/>
+
+
+            <templateNavTendanceContainerList :limit='limit_Tendance'/>
+
+            <templateNavSuggestion :limit='limit_Suggest'/>
+
+
+            <ContainerLinkMetaData/>
+
+          </div> <!-- container_Tendance -->
+        </div>
 
       </section>
-    <!-- </div> -->
+
 
 </template>
 
 <script>
 // @ is an alias to /src
 import templateNav from '@/components/templateContainer_Left/templateNav.vue'
+
 // --
+
 import templateHeader from  '@/components/templateContainer_Right/partCenter/template_header.vue';
 import FeedNewPost from '@/components/templateContainer_Right/partCenter/home/Compo_FeedNewPost.vue';
 import FeedThread from '@/components/templateContainer_Right/partCenter/home/Compo_FeedThread.vue';
+
 // --
-import templateNavTendance from '@/components/templateContainer_Right/templateNavTendance.vue'
-// import templateFeed from '@/components/templateContainer_Right/templateFeed_Center.vue'
- 
+
+import templateNavSuggestion from '@/components/templateContainer_Right/partRight/suggestion.vue';
+import templateNavTendanceContainerList from '@/components/templateContainer_Right/partRight/containerTendance.vue';
+import ContainerLinkMetaData from '@/components/templateContainer_Right/partRight/ContainerLinkMetaData.vue'
+import searchBar from '@/components/templateContainer_Right/partRight/SearchBar.vue'
+
 
 
 
@@ -48,13 +71,18 @@ export default {
     FeedNewPost,
     FeedThread,
     // --
-    templateNavTendance,
 
+    templateNavTendanceContainerList,
+    templateNavSuggestion,
+    ContainerLinkMetaData,
+    searchBar
   },
   data(){
     return{
       title:"Accueil",
-      
+      limit_Tendance:5,
+      limit_Suggest:3,
+
       feedTemplate: null,
       tendanceTemplate:null
     }
@@ -78,11 +106,11 @@ export default {
     }
   }
   ,mounted(){
-    // recupe des containers enfants a partir du parent
+
     this.feedTemplate = this.$refs.containerFeed;
     console.log(this.feedTemplate)
 
-    this.tendanceTemplate = this.$refs.tendanceTemplate.$refs.containerTendance;
+    this.tendanceTemplate = this.$refs.containerTendance;
     console.log(this.tendanceTemplate)
 
   }
@@ -92,10 +120,7 @@ export default {
 }
 </script>
 <style scoped>
-.container-fluid{
-  width: 100Vw;
-  display: flex;
-}
+
 section{
   height: 100vh;
   overflow-x: hidden;
@@ -122,6 +147,25 @@ section{
 
 
 }
+/* ------------- */
+.tNavTendance{
 
+flex: 1;
+
+
+border-left: 1px solid #eff3f4;
+
+padding:  0 3rem;
+
+height: 100vh;
+overflow-y: scroll;
+scrollbar-width: none;
+
+}
+.container_Tendance{
+width: 60%;
+position: relative;
+
+}
 
 </style>

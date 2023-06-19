@@ -31,8 +31,18 @@ const routes = [
   //  }
     component: () => import(/* webpackChunkName: "explorer" */ '../views/ExplorerView.vue')
   },
+  {
+    path: '/trend',
+    name: 'trend',
+    component: () => import(/* webpackChunkName: "explorer" */ '../views/TrendView.vue')
+  },
 
 
+  {
+    path: '/message',
+    name: 'message',
+    component: () => import(/* webpackChunkName: "explorer" */ '../views/MessageView.vue')
+  },
 
 
 ]

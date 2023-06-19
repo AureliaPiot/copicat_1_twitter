@@ -5,27 +5,26 @@
           <li class="suggestion_list--title">
             <h5>suggestions</h5>
           </li>
-  
-          <li class="suggestion_list--item" v-for="n in 4" :key="n">
+
+          <li class="suggestion_list--item" v-for="User in arrayUser " :key="User.id">
             <a href="">
 
-              <span class="suggestion_span--img_profile"></span>
+              <span class="suggestion_span--img_profile"  :style="{ backgroundImage: `url( ${require('@/assets/img/profile/' +User.userData.user_img)} )` }">
+                
+              </span>
               
               <div class="suggestion_span--group">
-                <span class="suggestion_span--name_profile">blahblah</span>
-                <span class="suggestion_span--tag_profile">@blubhbluh</span>
+                <span class="suggestion_span--name_profile">{{User.userData.user_pseudo}}</span>
+                <span class="suggestion_span--tag_profile">@{{User.userData.user_tag}}</span>
               </div>
               <span class="suggestion_span--follow_profile--action">Suivre</span>
             
             </a>
-  
-  
-            
           </li>
   
           <li class="suggestion_list--more">
             <a href="#">
-              <p>en savoir plus</p>
+              <p>Voir plus</p>
             </a>
           </li>
   
@@ -35,12 +34,13 @@
    </template>
      
      <script>
+import { useAppDataStore } from '@/stores/appData.js'
 
   
      export default {
        name: 'templateNavSuggestion',
        props: {//ici les proprietes transmise par le parents
-       //   msg: String
+         limit: Number
        },
        data(){
         return{//ici les proprietes du composant
@@ -54,9 +54,25 @@
       computed:{//(retrun)ici , return de propieter qui necessite une logique de modification, sans modifier les propriete utiliser de base
         //elles sont automatiquement recalculer si une propriete de base est modifier
         //proprieter mis en cache (gain de ressource, temps etc ..)
-
+        storeAppData(){
+          return useAppDataStore()
+      },
+        arrayUser(){
+          let allUsers =this.storeAppData.usersArray;
+          let array_List_object=[];
+          for(let i=0; i<this.limit ; i++ ){
+            array_List_object.push(allUsers[i])
+          }
+          return array_List_object;
+          // return this.storeAppData.usersArray
+      },
         
        },
+       mounted(){
+        this.arrayUser.forEach((user)=>{
+          console.log(user)
+        })
+       }
      }
      </script>
      
@@ -64,7 +80,7 @@
      <style scoped>
 
 .container_liste{
-  margin-top: 3.5rem;
+  margin-top: 0.5rem;
   width: 100%;
   background-color: #eff3f4;
   border-radius: 15px;
@@ -81,6 +97,7 @@ h5{
 
 }
   .suggestion_list--more > a{
+    color: #1d9bf0;
     display: block;
     padding: 12px ;
   }

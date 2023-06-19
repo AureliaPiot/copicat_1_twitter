@@ -1,73 +1,125 @@
 <template>
 
-    <!-- <div class="container-fluid "> -->
-      <section class="template_Nav lightRed" >
-        <templateNav />
-      </section>
 
-      <section class="template_Feed lightBlue ">
+  <section class="template_Nav " >
+    <templateNav />
+  </section>
 
-<!-- part center -->
-        <div ref="containerFeed" class="tfeed">
-            <templateHeader :title="title"/>
+  <section class="part_right " @scroll="handleScroll">
+    
+<!-- part center --------------------------------------------->
 
-        </div>
-<!-- part right -->
-        <templateNavTendance ref="tendanceTemplate" />
+    <div ref="containerFeed" class="tfeed">
+      <templateHeader :title="title"/>
 
-      </section>
-    <!-- </div> -->
+      <templateNavTendanceContainerList :limit='limit_Tendance'/>
+      <FeedNewPost/>
+      <FeedThread />
+
+    </div>
+
+<!-- part right --------------------------------------------->
+
+
+    <div class="lightBlue tNavTendance " ref="containerTendance">
+
+      <div class="container_Tendance">
+
+        <!-- <searchBar/> -->
+
+
+        <templateNavSuggestion :limit='limit_Suggest'/>
+
+
+        <ContainerLinkMetaData/>
+
+      </div> <!-- container_Tendance -->
+    </div>
+
+  </section>
+
 
 </template>
 
 <script>
 // @ is an alias to /src
-import router from '@/router/';
-
 import templateNav from '@/components/templateContainer_Left/templateNav.vue'
-import templateNavTendance from '@/components/templateContainer_Right/templateNavTendance.vue'
+
+// --
+
+import templateHeader from  '@/components/templateContainer_Right/partCenter/template_header.vue';
+import FeedNewPost from '@/components/templateContainer_Right/partCenter/home/Compo_FeedNewPost.vue';
+import FeedThread from '@/components/templateContainer_Right/partCenter/home/Compo_FeedThread.vue';
+import templateNavTendanceContainerList from '@/components/templateContainer_Right/partRight/containerTendance.vue';
+
+// --
+
+// import searchBar from '@/components/templateContainer_Right/partRight/SearchBar.vue'
+import templateNavSuggestion from '@/components/templateContainer_Right/partRight/suggestion.vue';
+import ContainerLinkMetaData from '@/components/templateContainer_Right/partRight/ContainerLinkMetaData.vue'
+
+
 
 
 export default {
-  name: 'ExplorerView',
-  router,
-  components: {
-    templateNav,
-    templateNavTendance,
-  },
-  data(){
-    return{
-      title:"explorer"
-    }
-  },
-  methods:{    
+name: 'HomeView',
+components: {
+templateNav,
+// --
+templateHeader,
+FeedNewPost,
+FeedThread,
 
-  }
-  ,mounted(){
+templateNavTendanceContainerList,
 
-  }
+// --
+
+
+// searchBar,
+templateNavSuggestion,
+ContainerLinkMetaData,
+},
+data(){
+return{
+  title:"Explorer",
+  limit_Tendance:5,
+  limit_Suggest:3,
+
+  feedTemplate: null,
+  tendanceTemplate:null
+}
+},
+methods:{    
+
+}
+,mounted(){
+
+}
 
 
 
 }
 </script>
 <style scoped>
+
 section{
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  display: flex;
+height: 100vh;
+overflow-x: hidden;
+overflow-y: scroll;
+display: flex;
 }
 .template_Nav{
-  width: 30%;
-  justify-content: end;
-  border-right: 1px solid #eff3f4;
-  padding:  0 0.5rem;
+width: 30%;
+justify-content: end;
+border-right: 1px solid #eff3f4;
+padding:  0 0.5rem;
 }
-.template_Feed{
-  width: 70%;
+.part_right{
+width: 70%;
 }
+
 .tfeed{
+
 position:relative;
 flex: 1;
 height: 100vh;
@@ -76,4 +128,29 @@ scrollbar-width: none;
 
 
 }
+.tfeed .container_liste{
+  background: transparent;
+  border-radius: 0;
+}
+/* ------------- */
+.tNavTendance{
+
+flex: 1;
+
+
+border-left: 1px solid #eff3f4;
+
+padding:  0 3rem;
+
+height: 100vh;
+overflow-y: scroll;
+scrollbar-width: none;
+
+}
+.container_Tendance{
+width: 60%;
+position: relative;
+
+}
+
 </style>
